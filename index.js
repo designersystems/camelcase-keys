@@ -20,7 +20,10 @@ const isObject = value =>
 	value !== null &&
 	!(value instanceof RegExp) &&
 	!(value instanceof Error) &&
-	!(value instanceof Date);
+	!(value instanceof Date) &&
+	!(value instanceof Uint8Array) &&
+	!(value instanceof Buffer) &&
+	!(value instanceof ArrayBuffer);
 
 const camelCaseConvert = (input, options) => {
 	if (!isObject(input)) {
